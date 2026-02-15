@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Tre Feste di Compleanno</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Crimson Text', serif;
+            color: #f1c40f;
+
+            /* Sfondo Viola Profondo */
+            background-color: #1a0a2e;
+
+            /* Effetto Stelle con Gradienti */
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+                radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+
+            /* Dimensioni e posizionamento delle stelle */
+            background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+
+            /* Opzionale: un leggero bagliore centrale per dare profondità */
+            background-attachment: fixed;
+        }
+
+        h1 { color: #f1c40f; text-shadow: 2px 2px #000; font-size: 2.5em; }
+        .subtitle { font-style: italic; margin-bottom: 40px; }
+
+        .houses-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1000px;
+        }
+
+        .house-card {
+            background: #2c3e50;
+            border: 2px solid #f1c40f;
+            border-radius: 15px;
+            padding: 20px;
+            width: 250px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .house-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(241, 196, 15, 0.3);
+            background: #34495e;
+        }
+
+        .house-card img {
+            width: 20vw;
+        }
+
+        /* Colori Tematici */
+        .grifondoro { border-color: #740001; }
+        .serpeverde { border-color: #1a472a; }
+        .corvonero { border-color: #0e1a40; }
+
+        #program-display {
+            margin-top: 50px;
+            padding: 30px;
+            border-top: 2px solid #f1c40f;
+            max-width: 600px;
+            text-align: center;
+            display: none; /* Nascosto finché non si clicca */
+            animation: fadeIn 0.8s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .program-title { color: #f1c40f; font-size: 1.8em; margin-bottom: 10px; }
+
+        .pergamena {
+            background: #f2e3c9; /* Colore base carta antica */
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+                radial-gradient(ellipse at center, #f5e6cc 0%, #d7b98e 100%);
+
+            color: #4a2c0a; /* Marrone scuro per l'inchiostro */
+            padding: 25px;
+            border-radius: 5px;
+
+            /* Effetto bordi bruciati/rovinati */
+            box-shadow: 
+                0 0 5px rgba(0,0,0,0.2),
+                inset 0 0 50px rgba(139, 69, 19, 0.2);
+
+            border-left: 2px solid #bda06d;
+            border-right: 2px solid #bda06d;
+
+            /* Font leggibile ma d'atmosfera */
+            font-family: 'Crimson Text', serif;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 80%;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        /* Opzionale: aggiunge un tocco di "usura" agli angoli */
+        .pergamena::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 1px solid rgba(0,0,0,0.05);
+            pointer-events: none;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 40px 20px;
+            border-top: 1px dashed #f1c40f;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            color: rgba(241, 196, 15, 0.8);
+            font-size: 0.9em;
+        }
+
+        .magic-signature {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.5em;
+            color: #f1c40f;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Compleanno Magico: Scegli la tua serata</h1>
+    <p class="subtitle">Tocca uno stemma per rivelare il programma segreto...</p>
+
+    <div class="houses-container">
+        <div class="house-card grifondoro" onclick="showProgram('grifondoro')">
+            <img src="C:\Users\f.gorrino\Desktop\New folder (2)\Torino.png"/>
+            <h1>13 - 15 Marzo</h1>
+            <h2>Torino</h2>
+        </div>
+
+        <div class="house-card serpeverde" onclick="showProgram('serpeverde')">
+            <img src="C:\Users\f.gorrino\Desktop\New folder (2)\Morbello.png"/>
+            <h1>20 - 22 Marzo</h1>
+            <h2>Morbello</h2>
+        </div>
+
+        <div class="house-card corvonero" onclick="showProgram('corvonero')">
+            <img src="C:\Users\f.gorrino\Desktop\New folder (2)\Genova.png"/>
+            <h1>27 - 29 Marzo</h1>
+            <h2>Genova</h2>
+        </div>
+    </div>
+
+    <div id="program-display">
+        <div id="program-content"></div>
+    </div>
+
+    <script>
+        const programs = {
+            'grifondoro': {
+                title: "Programma di Torino",
+                filastrocca: "Sotto le guglie della Mole svettante,<br>cerco chi vive il mio tempo presente.<br>Non serve un passato di lunga durata,<br>se l'amicizia è appena sbocciata!<br>Per i volti nuovi e i legami recenti,<br>Torino vi attende a braccia ridenti:<br>brindiamo a chi c'è, a chi è qui ora,<br>in questa magica e nuova aurora!"
+                //details: "<b>Data:</b> 15 Marzo - ore 20:30<br><b>Location:</b> La Tana<br><br>Una cena rustica con fiumi di Burrobirra. Portate il vostro spirito più eroico e tanta fame!"
+            },
+            'serpeverde': {
+                title: "Programma di Morbello",
+                filastrocca: "Dove il castello domina la valle,<br>e il vino antico scalda ogni spalla,<br>chiamo a raccolta la mia vera gente,<br>chi nelle vene ha un legame potente!<br>Parenti e fratelli di questa mia terra,<br>dove il mio primo ricordo si serra:<br>Morbello v'aspetta, tra fiamme e legami,<br>per onorar la stirpe e i suoi rami.<br>Qui conta il sangue, la storia e il destino,<br>brindiamo alla patria con ottimo vino!"
+                //details: "<b>Data:</b> 22 Marzo - ore 22:00<br><b>Location:</b> Secret Bar<br><br>Serata elegante e misteriosa. Dress code: un tocco di verde e astuzia da vendere."
+            },
+            'corvonero': {
+                title: "Programma di Genova",
+                filastrocca: "Tra i vicoli stretti dove il mare risuona,<br>la mente si aguzza e l'ingegno s'incorona.<br>Non cerco la forza, né il semplice affetto,<br>ma chi brilla per logica e fine intelletto!<br>Per i soci del Mensa e le menti sublimi,<br>che scalano del QI le vette ed i picchi,<br>Genova v'offre un porto sicuro,<br>dove il pensiero è limpido e puro.<br>Sotto il segno del Grifone e del sale,<br>s’apra il convivio del genio immortale!"
+                //details: "<b>Data:</b> 29 Marzo - ore 21:00<br><b>Location:</b> Rooftop Garden<br><br>Musica ricercata e chiacchiere sotto le stelle. Portate la vostra creatività, al resto pensiamo noi."
+            }
+        };
+
+        function showProgram(house) {
+            const display = document.getElementById('program-display');
+            const content = document.getElementById('program-content');
+            
+            display.style.display = 'block';
+            content.innerHTML = `
+                <div class="program-title">${programs[house].title}</div>
+                <p class="pergamena">${programs[house].filastrocca}</p>
+                <p>Cooming soon</p>
+            `;
+            
+            // Scroll automatico verso il programma
+            display.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <footer>
+        <p>Fatto con cura, magia e un pizzico di follia.</p>
+        <p>Grazie a chi sta contribuendo attivamente alla realizzazione di tutto questo: i Remixers, Nicolò Iguera, Sara Berbotto, Emiliano Daddario e Chiara Barri.</p>
+        <p>Grazie anche a voi che parteciperete!</p>
+        <span class="magic-signature">Il festeggiato</span>
+    </footer>
+
+</body>
+</html>
