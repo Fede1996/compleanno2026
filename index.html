@@ -139,6 +139,14 @@
             display: block;
             margin-top: 10px;
         }
+        .cornice {
+            /* Definiamo il bordo: spessore, stile e colore */
+            border: 2px solid #f1c40f; 
+  
+            /* Arrotondiamo i bordi (più alto è il valore, più è curvo) */
+            border-radius: 15px;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -174,17 +182,20 @@
         const programs = {
             'grifondoro': {
                 title: "Programma di Torino",
-                filastrocca: "Sotto le guglie della Mole svettante,<br>cerco chi vive il mio tempo presente.<br>Non serve un passato di lunga durata,<br>se l'amicizia è appena sbocciata!<br>Per i volti nuovi e i legami recenti,<br>Torino vi attende a braccia ridenti:<br>brindiamo a chi c'è, a chi è qui ora,<br>in questa magica e nuova aurora!"
+                filastrocca: "Sotto le guglie della Mole svettante,<br>cerco chi vive il mio tempo presente.<br>Non serve un passato di lunga durata,<br>se l'amicizia è appena sbocciata!<br>Per i volti nuovi e i legami recenti,<br>Torino vi attende a braccia ridenti:<br>brindiamo a chi c'è, a chi è qui ora,<br>in questa magica e nuova aurora!",
+                programma: "<div class='cornice'><b>Data:</b>13 Marzo - ore 21:00<br><br><b>Location:</b>La Gilda del Grifone, Via Ada Negri, 8, 10136 Torino TO<br><br>Iniziamo col botto con una collaborazione a cui tengo tantissimo: avremo con noi i Remixers! È un gruppo di master che verrà apposta in Gilda per farci provare il loro gioco. Un'occasione unica, non mancate!</div><br><br><div class='cornice'><b>Data:</b>14 Marzo - ore 22:00<br><br><b>Location:</b>Karaoke Disco Club Prima Donna, Corso Peschiera, 171/C, 10100 Torino TO<br><br>Il biglietto costa 10€, ma l'ingresso lo offro io a tutti voi! 🎁 Voglio solo che pensiate a divertirvi e a cantare. Tenete conto che il sabato il locale non riserva sale private, quindi ho dato un numero indicativo al proprietario: cerchiamo di essere compatti così facciamo gruppo subito!</div>"
                 //details: "<b>Data:</b> 15 Marzo - ore 20:30<br><b>Location:</b> La Tana<br><br>Una cena rustica con fiumi di Burrobirra. Portate il vostro spirito più eroico e tanta fame!"
             },
             'serpeverde': {
                 title: "Programma di Morbello",
-                filastrocca: "Dove il castello domina la valle,<br>e il vino antico scalda ogni spalla,<br>chiamo a raccolta la mia vera gente,<br>chi nelle vene ha un legame potente!<br>Parenti e fratelli di questa mia terra,<br>dove il mio primo ricordo si serra:<br>Morbello v'aspetta, tra fiamme e legami,<br>per onorar la stirpe e i suoi rami.<br>Qui conta il sangue, la storia e il destino,<br>brindiamo alla patria con ottimo vino!"
+                filastrocca: "Dove il castello domina la valle,<br>e il vino antico scalda ogni spalla,<br>chiamo a raccolta la mia vera gente,<br>chi nelle vene ha un legame potente!<br>Parenti e fratelli di questa mia terra,<br>dove il mio primo ricordo si serra:<br>Morbello v'aspetta, tra fiamme e legami,<br>per onorar la stirpe e i suoi rami.<br>Qui conta il sangue, la storia e il destino,<br>brindiamo alla patria con ottimo vino!",
+                programma: "<div class='cornice'><b>Data:</b>21 Marzo - ore 21:00<br><br><b>Location:</b>???<br><br>Sarà una semplice pizzata con i parenti e i pochi amici che riesco a incrociare in zona e che non vedo da una vita. Non c'è ancora un posto fisso, decideremo all'ultimo in base a chi c'è.</div>"
                 //details: "<b>Data:</b> 22 Marzo - ore 22:00<br><b>Location:</b> Secret Bar<br><br>Serata elegante e misteriosa. Dress code: un tocco di verde e astuzia da vendere."
             },
             'corvonero': {
                 title: "Programma di Genova",
-                filastrocca: "Tra i vicoli stretti dove il mare risuona,<br>la mente si aguzza e l'ingegno s'incorona.<br>Non cerco la forza, né il semplice affetto,<br>ma chi brilla per logica e fine intelletto!<br>Per i soci del Mensa e le menti sublimi,<br>che scalano del QI le vette ed i picchi,<br>Genova v'offre un porto sicuro,<br>dove il pensiero è limpido e puro.<br>Sotto il segno del Grifone e del sale,<br>s’apra il convivio del genio immortale!"
+                filastrocca: "Tra i vicoli stretti dove il mare risuona,<br>la mente si aguzza e l'ingegno s'incorona.<br>Non cerco la forza, né il semplice affetto,<br>ma chi brilla per logica e fine intelletto!<br>Per i soci del Mensa e le menti sublimi,<br>che scalano del QI le vette ed i picchi,<br>Genova v'offre un porto sicuro,<br>dove il pensiero è limpido e puro.<br>Sotto il segno del Grifone e del sale,<br>s’apra il convivio del genio immortale!",
+                programma: "<div class='cornice'><b>Data:</b>Prima del Convegno<br><br><b>Location:</b>Tutta Italia<br><br>Per scaldare i motori, rilascerò su questo gruppo gli enigmi creati appositamente per l'evento. Il socio che si presenterà e ne risolverà di più nel minor tempo riceverà un premio speciale che consegnerò direttamente durante il convegno a Genova! Occhio alle notifiche...</div><br><br><div class='cornice'><b>Data:</b>28 Marzo - ore ???<br><br><b>Location:</b>???<br><br>Ci ritroveremo per festeggiare il mio compleanno insieme, un’occasione per alzare i calici e ringraziare tutti voi per la partecipazione. Durante la serata avrà luogo la premiazione ufficiale: sveleremo finalmente il nome del socio che ha dimostrato maggior intuito e velocità nel risolvere gli enigmi rilasciati in anteprima. Il vincitore riceverà un premio esclusivo.</div>"
                 //details: "<b>Data:</b> 29 Marzo - ore 21:00<br><b>Location:</b> Rooftop Garden<br><br>Musica ricercata e chiacchiere sotto le stelle. Portate la vostra creatività, al resto pensiamo noi."
             }
         };
@@ -197,7 +208,7 @@
             content.innerHTML = `
                 <div class="program-title">${programs[house].title}</div>
                 <p class="pergamena">${programs[house].filastrocca}</p>
-                <p>Cooming soon</p>
+                <p>${programs[house].programma}</p>
             `;
             
             // Scroll automatico verso il programma
